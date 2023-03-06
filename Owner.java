@@ -1,7 +1,7 @@
 
 public class Owner {
-    private final String name;
-    private Animal animal; 
+    protected final String name;
+    protected Animal animal; 
     
     public Owner(){
         this("", null);
