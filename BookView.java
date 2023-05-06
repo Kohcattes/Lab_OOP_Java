@@ -1,5 +1,5 @@
 
-package LibraBook;
+//Show Frame Edit, Delete or Add book
 
 import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
@@ -34,6 +34,7 @@ public class BookView extends JFrame implements ActionListener, WindowListener{
     
     
     public BookView() {
+    //Check Own Book
         try (FileInputStream fr = new FileInputStream("BoxBook.dat");
                 ObjectInputStream inp = new ObjectInputStream(fr);){
             box = (BoxBook) inp.readObject();
@@ -156,6 +157,7 @@ public class BookView extends JFrame implements ActionListener, WindowListener{
 
     @Override
     public void windowClosing(WindowEvent e) {
+    //Write File Box to Keep own Book
         try (FileOutputStream fr = new FileOutputStream("BoxBook.dat");
                 ObjectOutputStream oOut = new ObjectOutputStream(fr);){
             oOut.writeObject(box);
