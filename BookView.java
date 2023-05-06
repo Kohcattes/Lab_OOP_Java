@@ -116,17 +116,15 @@ public class BookView extends JFrame implements ActionListener, WindowListener{
             orderBook.setText(page+"");
             
         }else if(e.getSource().equals(updatebtn)){
-            Book j = new Book();
+            Book j = box.get(page-1);
             j.setName(nameFe.getText());
             j.setPrice(Double.parseDouble(priceFe.getText()));
             j.setType(typebox.getSelectedItem()+"");
-            box.set(page-1, j);
             JOptionPane.showMessageDialog(null, "Done it.", "Update Command", JOptionPane.PLAIN_MESSAGE);
             //set Text Feild
-            nameFe.setText(box.get(page-1).getName());
-            priceFe.setText(box.get(page-1).getPrice()+"");
-            typebox.setName(box.get(page-1).getType());
-            orderBook.setText(page+"");
+            nameFe.setText(j.getName());
+            priceFe.setText(j.getPrice()+"");
+            typebox.setName(j.getType());
 
         }else if(e.getSource().equals(deletebtn)){
             box.remove(page-1);
