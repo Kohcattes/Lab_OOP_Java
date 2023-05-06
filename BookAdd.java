@@ -1,4 +1,4 @@
-package LibraBook;
+//Add New Book to Box in BookView
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -52,7 +52,8 @@ public class BookAdd extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource().equals(insertbtn)){
             Book b = new Book(nameFe.getText(), Double.parseDouble(priceFe.getText()), typebox.getSelectedItem()+"");
-            BookView.box.add(b);this.dispose();
+            BookView.box.add(b);this.dispose();//Close Frame
+            //Notification User "Done it."
             JOptionPane.showMessageDialog(null, "Done it.", "", JOptionPane.PLAIN_MESSAGE);
             
         }
